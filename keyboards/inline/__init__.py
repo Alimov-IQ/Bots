@@ -1,0 +1,1 @@
+from .registration import choice_mafia_keyboard, choice_mafia_restart_keyboard, menu_services_keyboard
