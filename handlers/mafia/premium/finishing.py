@@ -14,7 +14,7 @@ from aiogram.dispatcher import FSMContext
 async def proccess_mafia_premium_finishing(message: Message, state: FSMContext):
     async with state.proxy() as data:
         data['instagram'] = message.text
-       if data['gender'] == "man":
+        if data['gender'] == "man":
             if data['month'] == 'Март':
                 await message.answer(f'''
 ✏️ Убедись в том, что данные верны
@@ -41,28 +41,27 @@ async def proccess_mafia_premium_finishing(message: Message, state: FSMContext):
 
         if data['gender'] == "woman":
             if data['month'] == 'Март':
-                            await message.answer(f'''
+                await message.answer(f'''
  ✏️ Убедись в том, что данные верны
 Твое имя: {data['name']}
 Твой пол:  женский
 Дата рождения: {data['day']} марта
                 ''', reply_markup=ec_keyboard)
 
-                        elif data['month'] == 'Август':
-                            await message.answer(f'''
+            elif data['month'] == 'Август':
+                await message.answer(f'''
 ✏️ Убедись в том, что данные верны
 Твое имя: {data['name']}
 Твой пол:  женский
 Дата рождения: {data['day']} августа
                 ''', reply_markup=ec_keyboard)
-                        else:
-                            await message.answer(f'''
+            else:
+                await message.answer(f'''
 ✏️ Убедись в том, что данные верны
 Твое имя: {data['name']}
 Твой пол: женский
 Дата рождения: {data['day']} {data['month'].lower()[:-1]}я
                     ''', reply_markup=ec_keyboard)
-
     await PremiumMafiaForm.next()
 
 
