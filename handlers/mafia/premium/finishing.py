@@ -14,26 +14,54 @@ from aiogram.dispatcher import FSMContext
 async def proccess_mafia_premium_finishing(message: Message, state: FSMContext):
     async with state.proxy() as data:
         data['instagram'] = message.text
-
-
-        if data['gender'] == "man":
-            await message.answer(f'''
+       if data['gender'] == "man":
+            if data['month'] == 'Март':
+                await message.answer(f'''
 ✏️ Убедись в том, что данные верны
+Твое имя: {data['name']}
+Твой пол: мужской
+Дата рождения: {data['day']} марта
+    ''', reply_markup=ec_keyboard)
 
+            elif data['month'] == 'Август':
+                await message.answer(f'''
+✏️ Убедись в том, что данные верны
+Твое имя: {data['name']}
+Твой пол: мужской
+Дата рождения: {data['day']} августа
+    ''', reply_markup=ec_keyboard)
+            else:
+                await message.answer(f'''
+✏️ Убедись в том, что данные верны
 Твое имя: {data['name']}
 Твой пол: мужской
 Дата рождения: {data['day']} {data['month'].lower()[:-1]}я
-Instagram: {data['instagram']}
-    ''', reply_markup=ec_keyboard)
-        if data['gender'] == "woman":
-            await message.answer(f'''
-✏️ Убедись в том, что данные верны
+        ''', reply_markup=ec_keyboard)
 
+
+        if data['gender'] == "woman":
+            if data['month'] == 'Март':
+                            await message.answer(f'''
+ ✏️ Убедись в том, что данные верны
+Твое имя: {data['name']}
+Твой пол:  женский
+Дата рождения: {data['day']} марта
+                ''', reply_markup=ec_keyboard)
+
+                        elif data['month'] == 'Август':
+                            await message.answer(f'''
+✏️ Убедись в том, что данные верны
+Твое имя: {data['name']}
+Твой пол:  женский
+Дата рождения: {data['day']} августа
+                ''', reply_markup=ec_keyboard)
+                        else:
+                            await message.answer(f'''
+✏️ Убедись в том, что данные верны
 Твое имя: {data['name']}
 Твой пол: женский
 Дата рождения: {data['day']} {data['month'].lower()[:-1]}я
-Instagram: {data['instagram']}
-    ''', reply_markup=ec_keyboard)
+                    ''', reply_markup=ec_keyboard)
 
     await PremiumMafiaForm.next()
 
