@@ -45,28 +45,28 @@ async def proccess_mafia_standart_finishing(message: Message, state: FSMContext)
         if data['gender'] == "woman":
             if data['month'] == 'Март':
                             await message.answer(f'''
-            ✏️ Убедись в том, что данные верны
+ ✏️ Убедись в том, что данные верны
 
-            Твое имя: {data['name']}
-            Твой пол:  женский
-            Дата рождения: {data['day']} марта
+Твое имя: {data['name']}
+Твой пол:  женский
+Дата рождения: {data['day']} марта
                 ''', reply_markup=ec_keyboard)
 
                         elif data['month'] == 'Август':
                             await message.answer(f'''
-            ✏️ Убедись в том, что данные верны
+✏️ Убедись в том, что данные верны
 
-            Твое имя: {data['name']}
-            Твой пол:  женский
-            Дата рождения: {data['day']} августа
+Твое имя: {data['name']}
+Твой пол:  женский
+Дата рождения: {data['day']} августа
                 ''', reply_markup=ec_keyboard)
                         else:
                             await message.answer(f'''
-            ✏️ Убедись в том, что данные верны
+✏️ Убедись в том, что данные верны
 
-            Твое имя: {data['name']}
-            Твой пол: женский
-            Дата рождения: {data['day']} {data['month'].lower()[:-1]}я
+Твое имя: {data['name']}
+Твой пол: женский
+Дата рождения: {data['day']} {data['month'].lower()[:-1]}я
                     ''', reply_markup=ec_keyboard)
 
     await StandartMafiaForm.next()
