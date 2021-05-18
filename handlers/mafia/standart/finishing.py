@@ -44,7 +44,7 @@ async def proccess_mafia_standart_finishing(message: Message, state: FSMContext)
 
         if data['gender'] == "woman":
             if data['month'] == 'Март':
-                            await message.answer(f'''
+                await message.answer(f'''
  ✏️ Убедись в том, что данные верны
 
 Твое имя: {data['name']}
@@ -52,7 +52,7 @@ async def proccess_mafia_standart_finishing(message: Message, state: FSMContext)
 Дата рождения: {data['day']} марта
                 ''', reply_markup=ec_keyboard)
 
-                        elif data['month'] == 'Август':
+            elif data['month'] == 'Август':
                             await message.answer(f'''
 ✏️ Убедись в том, что данные верны
 
@@ -60,7 +60,7 @@ async def proccess_mafia_standart_finishing(message: Message, state: FSMContext)
 Твой пол:  женский
 Дата рождения: {data['day']} августа
                 ''', reply_markup=ec_keyboard)
-                        else:
+            else:
                             await message.answer(f'''
 ✏️ Убедись в том, что данные верны
 
