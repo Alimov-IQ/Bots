@@ -232,6 +232,7 @@ async def proccess_invite_code(message: Message, state=FSMContext):
             if message.from_user.id not in users:
                 button = await get_event_button(event)
                 #try:
+                print(message.from_user.id)
                 await add_user(event['chat_id'], message.from_user.id)
                 await message.answer("😌Отлично! Добавил тебя в мероприятие, проверяй чаты.", reply_markup=button)
                 #except:
