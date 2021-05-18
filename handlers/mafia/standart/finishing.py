@@ -53,7 +53,7 @@ async def proccess_mafia_standart_finishing(message: Message, state: FSMContext)
                 ''', reply_markup=ec_keyboard)
 
             elif data['month'] == 'Август':
-                            await message.answer(f'''
+                await message.answer(f'''
 ✏️ Убедись в том, что данные верны
 
 Твое имя: {data['name']}
@@ -61,7 +61,7 @@ async def proccess_mafia_standart_finishing(message: Message, state: FSMContext)
 Дата рождения: {data['day']} августа
                 ''', reply_markup=ec_keyboard)
             else:
-                            await message.answer(f'''
+                await message.answer(f'''
 ✏️ Убедись в том, что данные верны
 
 Твое имя: {data['name']}
